@@ -11,15 +11,22 @@ router.get('/', function (req, res) {
     try {
         //get all products from Virtual Data Base with some JSON files
         let products = JSON.parse(fs.readFileSync("./public/data/products.json", 'utf-8'));
-        //filter by category
-        if (params.filtering.category)
-            products = products.filter(item => item.category === params.filtering.category)
-        //filter by price
-        if (params.filtering.price) {
-            const allPrices = JSON.parse(fs.readFileSync("./public/data/prices.json", 'utf-8'));
-            const myPrice = allPrices[params.filtering.price];
-            products = products.filter(item => item.price >= myPrice.min && item.price <= myPrice.max);
+
+        if (params.filtering.category !== undefined){
+            //filter by category
+            if (params.filtering.category)
+                products = products.filter(item => item.category === params.filtering.category)
+            //filter by price
+            if (params.filtering.price) {
+                const allPrices = JSON.parse(fs.readFileSync("./public/data/prices.json", 'utf-8'));
+                const myPrice = allPrices[params.filtering.price];
+                products = products.filter(item => item.price >= myPrice.min && item.price <= myPrice.max);
+            }
+        } else if (params.filtering.search !== undefined){
+            if (params.filtering.search)
+                products = products.filter(item => item.productName.toLowerCase().includes(params.filtering.search.toLowerCase()));
         }
+
         //sorting
         if (params.filtering.sorting) {
             switch (params.filtering.sorting) {
