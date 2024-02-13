@@ -2,7 +2,7 @@
   {
     "productId": "1",
     "productName": "Laptop",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 899.99,
     "discount": 10,
     "description": "Powerful laptop for work and entertainment.",
@@ -15,7 +15,7 @@
   {
     "productId": "2",
     "productName": "Smartphone",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 499.99,
     "discount": 15,
     "description": "Latest smartphone with advanced features.",
@@ -28,7 +28,7 @@
   {
     "productId": "3",
     "productName": "Headphones",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 129.99,
     "discount": 5,
     "description": "High-quality headphones for an immersive audio experience.",
@@ -41,7 +41,7 @@
   {
     "productId": "4",
     "productName": "Coffee Maker",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 79.99,
     "discount": 0,
     "description": "Automatic coffee maker for your daily dose of caffeine.",
@@ -54,7 +54,7 @@
   {
     "productId": "5",
     "productName": "Fitness Tracker",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 69.99,
     "discount": 8,
     "description": "Stay fit with this advanced fitness tracker.",
@@ -67,7 +67,7 @@
   {
     "productId": "6",
     "productName": "Desk Chair",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 149.99,
     "discount": 12,
     "description": "Comfortable desk chair for long hours of work.",
@@ -80,7 +80,7 @@
   {
     "productId": "7",
     "productName": "Digital Camera",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 549.99,
     "discount": 18,
     "description": "Capture memories with this high-resolution digital camera.",
@@ -93,7 +93,7 @@
   {
     "productId": "8",
     "productName": "Wireless Mouse",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 29.99,
     "discount": 7,
     "description": "Convenient wireless mouse for easy navigation.",
@@ -106,7 +106,7 @@
   {
     "productId": "9",
     "productName": "Home Theater System",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 399.99,
     "discount": 15,
     "description": "Transform your home with this powerful home theater system.",
@@ -119,7 +119,7 @@
   {
     "productId": "10",
     "productName": "E-reader",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 119.99,
     "discount": 5,
     "description": "Enjoy reading with this lightweight and portable e-reader.",
@@ -132,7 +132,7 @@
   {
     "productId": "11",
     "productName": "Gaming Laptop",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 1499.99,
     "discount": 10,
     "description": "High-performance gaming laptop for hardcore gamers.",
@@ -145,7 +145,7 @@
   {
     "productId": "12",
     "productName": "Smart Watch",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 199.99,
     "discount": 8,
     "description": "Stay connected with this feature-packed smartwatch.",
@@ -158,7 +158,7 @@
   {
     "productId": "13",
     "productName": "Kitchen Blender",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 59.99,
     "discount": 0,
     "description": "Blend your favorite smoothies with this powerful kitchen blender.",
@@ -171,7 +171,7 @@
   {
     "productId": "14",
     "productName": "4K UHD TV",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 899.99,
     "discount": 12,
     "description": "Experience stunning visuals with this 4K UHD TV.",
@@ -184,7 +184,7 @@
   {
     "productId": "15",
     "productName": "Tablet",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 349.99,
     "discount": 15,
     "description": "Portable tablet for productivity and entertainment on the go.",
@@ -197,7 +197,7 @@
   {
     "productId": "16",
     "productName": "Wireless Earbuds",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 129.99,
     "discount": 8,
     "description": "Enjoy music without the hassle of wires with these wireless earbuds.",
@@ -210,7 +210,7 @@
   {
     "productId": "17",
     "productName": "Digital Drawing Tablet",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 199.99,
     "discount": 10,
     "description": "Unleash your creativity with this digital drawing tablet.",
@@ -223,7 +223,7 @@
   {
     "productId": "18",
     "productName": "Portable Power Bank",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 39.99,
     "discount": 5,
     "description": "Keep your devices charged on the go with this portable power bank.",
@@ -236,7 +236,7 @@
   {
     "productId": "19",
     "productName": "Robot Vacuum Cleaner",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 249.99,
     "discount": 15,
     "description": "Effortlessly clean your home with this intelligent robot vacuum cleaner.",
@@ -249,7 +249,7 @@
   {
     "productId": "20",
     "productName": "Wireless Gaming Mouse",
-    "image": "./public/images/test.webp",
+    "image": "public/images/test.webp",
     "price": 69.99,
     "discount": 10,
     "description": "Enhance your gaming experience with this wireless gaming mouse.",

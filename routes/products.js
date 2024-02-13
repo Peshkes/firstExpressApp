@@ -2,23 +2,26 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
+    const decodedParams = decodeURIComponent(req.query.params);
+    const params = JSON.parse(decodedParams);
+    console.log(params);
     const pageSize = 12;
     try {
         //get all products from Virtual Data Base with some JSON files
         let products = JSON.parse(fs.readFileSync("./public/data/products.json", 'utf-8'));
         //filter by category
-        if (req.body.filtering.category)
-            products = products.filter(item => item.category === req.body.filtering.category)
+        if (params.filtering.category)
+            products = products.filter(item => item.category === params.filtering.category)
         //filter by price
-        if (req.body.filtering.price){
+        if (params.filtering.price) {
             const allPrices = JSON.parse(fs.readFileSync("./public/data/prices.json", 'utf-8'));
-            const myPrice = allPrices[req.body.filtering.price];
+            const myPrice = allPrices[params.filtering.price];
             products = products.filter(item => item.price >= myPrice.min && item.price <= myPrice.max);
         }
         //sorting
-        if (req.body.filtering.sorting) {
-            switch (req.body.filtering.sorting) {
+        if (params.filtering.sorting) {
+            switch (params.filtering.sorting) {
                 case 0: //price-up
                     products.sort((a, b) => a.price - b.price);
                     break;
@@ -38,15 +41,21 @@ router.get('/', function(req, res) {
                     break;
             }
         }
-        //select 12 products
-        const startIndex = (req.body.page - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
-        const selectedProducts = products.slice(startIndex, endIndex);
+        //select 12 products if not null
+        //if page === null then it was getAll request
+        if (params.page != null) {
+            const startIndex = (params.page - 1) * pageSize;
+            const endIndex = startIndex + pageSize;
+            products = products.slice(startIndex, endIndex);
+        }
         //send response
-        res.json({ count: products.length, products: selectedProducts});
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
+        res.json({count: products.length, products: products});
     } catch (error) {
         console.error("Error on *products/* controller:", error);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({error: "Internal Server Error"});
     }
 });
 
