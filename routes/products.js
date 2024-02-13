@@ -7,6 +7,7 @@ router.get('/', function (req, res) {
     const params = JSON.parse(decodedParams);
     console.log(params);
     const pageSize = 12;
+    let count;
     try {
         //get all products from Virtual Data Base with some JSON files
         let products = JSON.parse(fs.readFileSync("./public/data/products.json", 'utf-8'));
@@ -41,6 +42,7 @@ router.get('/', function (req, res) {
                     break;
             }
         }
+        count = products.length;
         //select 12 products if not null
         //if page === null then it was getAll request
         if (params.page != null) {
@@ -52,7 +54,7 @@ router.get('/', function (req, res) {
         res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
         res.setHeader('Pragma', 'no-cache');
         res.setHeader('Expires', '0');
-        res.json({count: products.length, products: products});
+        res.json({count, products});
     } catch (error) {
         console.error("Error on *products/* controller:", error);
         res.status(500).json({error: "Internal Server Error"});
