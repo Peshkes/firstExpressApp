@@ -19,7 +19,7 @@ router.get('/', function (req, res) {
             //filter by price
             if (params.filtering.price) {
                 const allPrices = JSON.parse(fs.readFileSync("./public/data/prices.json", 'utf-8'));
-                const myPrice = allPrices[params.filtering.price];
+                const myPrice = allPrices.find(item => item.id === params.filtering.price);
                 products = products.filter(item => item.price >= myPrice.min && item.price <= myPrice.max);
             }
         } else if (params.filtering.search !== undefined){
@@ -30,19 +30,19 @@ router.get('/', function (req, res) {
         //sorting
         if (params.filtering.sorting) {
             switch (params.filtering.sorting) {
-                case 0: //price-up
+                case 1: //price-up
                     products.sort((a, b) => a.price - b.price);
                     break;
-                case 1: //price-down
+                case 2: //price-down
                     products.sort((a, b) => b.price - a.price);
                     break;
-                case 2: //new-first
+                case 3: //new-first
                     products.sort((a, b) => new Date(b.date) - new Date(a.date));
                     break;
-                case 3: //rating-up
+                case 4: //rating-up
                     products.sort((a, b) => a.rating - b.rating);
                     break;
-                case 4: //rating-down
+                case 5: //rating-down
                     products.sort((a, b) => b.rating - a.rating);
                     break;
                 default:
