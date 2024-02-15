@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "title": "Default"
+  },
+
+  {
+    "id": 1,
+    "title": "Price up"
+  },
+
+  {
+    "id": 2,
+    "title": "Price down"
+  },
+
+  {
+    "id": 3,
+    "title": "New first"
+  },
+
+  {
+    "id": 4,
+    "title": "Rating up"
+  },
+
+  {
+    "id": 5,
+    "title": "Rating down"
+  }
+]
